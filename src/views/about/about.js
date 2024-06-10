@@ -11,7 +11,7 @@ const AboutUs = () => {
                 <div className='aboutpagecontent'>
                     <h1>ABOUT VDHATRI HOMES</h1>
                     <p>Creating Synergy Between Lifestyle And Aesthetics</p>
-                    <p className='path'>HOME &nbsp;&nbsp;<span style={{ color: "orangered" }}>{location.pathname}</span></p>
+                    <p className='path'>HOME &nbsp;&nbsp;<span style={{ color: "red" }}>{location.pathname}</span></p>
                 </div>
             </div>
             <section className='aboutpagecontainer'>
