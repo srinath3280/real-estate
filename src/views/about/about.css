@@ -1,0 +1,51 @@
+.aboutpage {
+    width: 100%;
+    min-height: 90vh;
+    background-color: black;
+    background-image: url('/public/images/headerpattern.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aboutpagecontent {
+    width: 700px;
+    text-align: justify;
+    padding: 200px 0px 0px 50px;
+}
+
+.aboutpagecontent h1 {
+    font-size: 50px;
+    color: white;
+}
+
+.aboutpagecontent p {
+    font-size: 18px;
+    color: white;
+    margin: 15px;
+}
+
+.aboutpagecontent .path {
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.aboutpagecontent .path span {
+    font-size: 18px;
+}
+
+.aboutpagecontainer{
+    margin: 20px 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.aboutpagecontainer h3{
+    font-size: 30px;
+    color: black;
+    margin-bottom: -10px;
+}
+.aboutpagecontainer hr{
+    width: 900px;
+}
+
+
