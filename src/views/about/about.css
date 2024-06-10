@@ -39,13 +39,112 @@
     flex-direction: column;
     justify-content: flex-start;
 }
-.aboutpagecontainer h3{
-    font-size: 30px;
-    color: black;
-    margin-bottom: -10px;
+.aboutpagestatus{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.aboutpagestatus div h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(156, 106, 39);
 }
 .aboutpagecontainer hr{
-    width: 900px;
+    width: 950px;
+}
+.aboutpagecontainer p{
+    font-size: 18px;
+    color: black;
 }
 
+.aboutpagedata h1{
+    font-size: 30px;
+    text-align: justify;
+    margin-left: 100px;
+}
+.aboutpagedata p{
+    font-size: 16px;
+    text-align: justify;
+    margin-left: 250px;
+    margin-right: 100px;
+}
 
+.aboutpagedata2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 100px;
+}
+.aboutpagedata2 h1{
+    font-size: 40px;
+    width: 300px;
+    text-align: start;
+}
+.aboutpagedata2 img{
+    width: 600px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.aboutpagedata3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+.aboutpagedata3 .leftblock{
+    width: 50%;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+.aboutpagedata3 .rightblock{
+    width: 50%;
+    margin-left: 50px;
+    margin-right: 100px;
+}
+.aboutpagedata3 .leftblock h1 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 50px;
+}
+.aboutpagedata3 .leftblock h2 {
+    font-size: 30px;
+    text-align: start;
+    padding: 10px;
+}
+.aboutpagedata3 .leftblock p {
+    font-size: 16px;
+    text-align: justify;
+    padding: 10px;
+}
+.aboutpagedata3 .leftblock h1 .bi-eye {
+    font-size: 40px;
+    text-align: center;
+    line-height: 100px;
+}
+.aboutpagedata3 .rightblock h1 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 50px;
+}
+.aboutpagedata3 .rightblock h1 .bi-sort-up {
+    font-size: 40px;
+    text-align: center;
+    line-height: 100px;
+}
+.aboutpagedata3 .rightblock h2 {
+    font-size: 30px;
+    text-align: start;
+    padding: 10px;
+}
+.aboutpagedata3 .rightblock p {
+    font-size: 16px;
+    text-align: justify;
+    padding: 10px;
+}
