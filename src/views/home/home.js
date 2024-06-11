@@ -23,17 +23,16 @@ const Home = () => {
     if (carouselRef.current && window.bootstrap) {
       const carouselElement = carouselRef.current;
 
-      // Initialize the Bootstrap carousel
       new window.bootstrap.Carousel(carouselElement, {
-        interval: 3000, // Slide interval in milliseconds
-        ride: 'carousel' // Automatically cycle through slides
+        interval: 3000,
+        ride: 'carousel' 
       });
     }
   }, []);
 
   return (
     <div>
-      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" ref={carouselRef}>
+      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" ref={carouselRef}>
         <div className="carousel-indicators">
           {images.map((_, index) => (
             <button
