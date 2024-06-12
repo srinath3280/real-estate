@@ -25,10 +25,75 @@ const Home = () => {
 
       new window.bootstrap.Carousel(carouselElement, {
         interval: 3000,
-        ride: 'carousel' 
+        ride: 'carousel'
       });
     }
   }, []);
+
+
+  const boxRefs = useRef([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerBottom = window.innerHeight / 5 * 4;
+      boxRefs.current.forEach(ref => {
+        const boxTop = ref.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+          ref.classList.add('in-view');
+        } else {
+          ref.classList.remove('in-view');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const serviceRefs = useRef([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerBottom = window.innerHeight / 4 * 4;
+      serviceRefs.current.forEach(ref => {
+        const boxTop = ref.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+          ref.classList.add('in-view');
+        } else {
+          ref.classList.remove('in-view');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+  useEffect(() => {
+    const marquees = document.querySelectorAll('.marquee');
+
+    marquees.forEach((marquee) => {
+      marquee.addEventListener('mouseenter', () => {
+        marquee.style.animationPlayState = 'paused';
+      });
+
+      marquee.addEventListener('mouseleave', () => {
+        marquee.style.animationPlayState = 'running';
+      });
+    });
+  }, []);
+
 
   return (
     <div>
@@ -88,22 +153,22 @@ const Home = () => {
             </div>
           </div>
           <div class="aboutbottomcontent">
-            <div class="box">
+            <div class="box" data-direction="top" ref={el => boxRefs.current[0] = el}>
               <h3>20+</h3>
               <p>years of experience</p>
             </div>
 
-            <div class="box">
+            <div class="box" data-direction="left" ref={el => boxRefs.current[1] = el}>
               <h3>200+</h3>
               <p>project completed</p>
             </div>
 
-            <div class="box">
+            <div class="box" data-direction="bottom" ref={el => boxRefs.current[2] = el}>
               <h3>100%</h3>
               <p>Work Accuracy</p>
             </div>
 
-            <div class="box">
+            <div class="box" data-direction="right" ref={el => boxRefs.current[3] = el}>
               <h3>100+</h3>
               <p>Active workers</p>
             </div>
@@ -119,7 +184,7 @@ const Home = () => {
           <h1 class="serviceheadingtext">Our Services</h1>
         </div>
         <div class="servicecontainer">
-          <div class="servicebox">
+          <div class="servicebox" data-direction="bottom" ref={el => serviceRefs.current[0] = el}>
             <img src="/images/architecture.png" />
             <h3>Architectural Design</h3>
             <p>
@@ -128,7 +193,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div class="servicebox">
+          <div class="servicebox" data-direction="right" ref={el => serviceRefs.current[1] = el}>
             <img src="/images/construction.png" />
             <h3>Construction and Planning</h3>
             <p>
@@ -137,7 +202,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div class="servicebox">
+          <div class="servicebox" data-direction="left" ref={el => serviceRefs.current[2] = el}>
             <img src="/images/residential.png" />
             <h3>Residential Housing Projects</h3>
             <p>
@@ -146,7 +211,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div class="servicebox">
+          <div class="servicebox" data-direction="top" ref={el => serviceRefs.current[3] = el}>
             <img src="/images/commercial.png" />
             <h3>Commercial Projects</h3>
             <p>
@@ -155,7 +220,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div class="servicebox">
+          <div class="servicebox" data-direction="top-left" ref={el => serviceRefs.current[4] = el}>
             <img src="/images/interiordesign.png" />
             <h3>Interior Design and Execution</h3>
             <p>
@@ -163,7 +228,7 @@ const Home = () => {
               that reflect your vision.
             </p>
           </div>
-          <div class="servicebox">
+          <div class="servicebox" data-direction="bottom-right" ref={el => serviceRefs.current[5] = el}>
             <img src="/images/majorrenovations.png" />
             <h3>Major Renovations Projects</h3>
             <p>
@@ -303,7 +368,47 @@ const Home = () => {
           <div className='brandheadingline'></div>
           <h1 class="brandheadingtext">We choose <br />THE BEST BRANDS FOR YOU</h1>
         </div>
-        <div class="swiper">
+        <div className="marquee-container">
+          <div className="marquee marquee-right-to-left">
+            <div className="swiper-slide">
+              <img src="/images/brand1.jpeg" alt="Brand 1" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand2.jpeg" alt="Brand 2" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand3.jpeg" alt="Brand 3" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand4.webp" alt="Brand 4" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand5.png" alt="Brand 5" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand6.webp" alt="Brand 6" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand7.webp" alt="Brand 7" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand8.webp" alt="Brand 8" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand9.png" alt="Brand 9" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand10.png" alt="Brand 10" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand11.jpg" alt="Brand 11" />
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/brand12.png" alt="Brand 12" />
+            </div>
+          </div>
+        </div>
+        {/* <div class="swiper">
           <div class="swiper-slide slide">
             <img src="/images/brand1.jpeg" alt="Brand 1" />
           </div>
@@ -340,7 +445,7 @@ const Home = () => {
           <div class="swiper-slide slide">
             <img src="/images/brand12.png" alt="Brand 12" />
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* brands sections ends here */}
